@@ -22,6 +22,7 @@ class UserController{
             session_start();
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
+            $_SESSION['role'] = $user['role'];
             header("Location: index.php?action=home");
         }else{
             $error = "Invalid username or password";

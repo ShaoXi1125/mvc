@@ -3,13 +3,17 @@
 namespace App\Controllers;
 
 use App\Models\Claim;
+use App\Core\AuthMiddleware;
+
 
 class ClaimController{
+
+    public function __contruct(){
+        AuthMiddleware::isLoggedIn();
+    }
+
     public function index(){
-        $model = new Claim();
-        $claims = $model->getAllClaims();
-        $title ="Staff Claim List";
-        require 'views/list.php';
+       
     }
 
     public function claimForm(){
