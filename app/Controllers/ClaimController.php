@@ -8,12 +8,8 @@ use App\Core\AuthMiddleware;
 
 class ClaimController{
 
-    public function __contruct(){
+    public function __construct(){
         AuthMiddleware::isLoggedIn();
-    }
-
-    public function index(){
-       
     }
 
     public function claimForm(){
