@@ -11,6 +11,7 @@ $action = $_GET['action'] ?? 'login';
 
 use App\Controllers\ClaimController;
 use App\Controllers\UserController;
+use App\Controllers\ManagerController;
 
 $auth = new UserController();
 // $app = new ClaimController();
@@ -43,5 +44,9 @@ switch($action){
     case 'my_claims':
         $app = new ClaimController();
         $app->myClaims();
+        break;
+    case 'manager':
+        $app = new ManagerController();
+        $app->index();
         break;
 }
